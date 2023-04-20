@@ -9,8 +9,8 @@ import (
 
 	// _ swaggerFiles "github.com/swaggo/files"
 	// _ ginSwagger "github.com/swaggo/gin-swagger"
-	control "GoProject/Control"
-	"GoProject/model"
+	control "gin/Control"
+	"gin/model"
 )
 
 func main() {
@@ -34,6 +34,7 @@ func main() {
 			c.JSON(http.StatusExpectationFailed, gin.H{
 				"message": "error format",
 			})
+			return
 		}
 		member.PostCreateData(v)
 		c.JSON(http.StatusOK, v)

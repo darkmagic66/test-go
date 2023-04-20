@@ -1,7 +1,7 @@
 package control
 
 import (
-	"GoProject/model"
+	"gin/model"
 )
 
 type MemberData struct {
