@@ -29,6 +29,21 @@ var arr_test = []Test{
 	},
 }
 
+// HealthCheck godoc
+// @Summary Show the status of server.
+// @Description get the status of server.
+// @Tags root
+// @Accept */*
+// @Produce json
+// @Success 200 {object} map[string]string
+// @Router / [get]
+
+func HeatCheck(c echo.Context) error {
+	return c.JSON(http.StatusOK, map[string]string{
+		"message": "statsu ok",
+	})
+}
+
 func GetAllData(c echo.Context) error {
 	y := c.QueryParam("year")
 

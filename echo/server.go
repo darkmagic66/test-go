@@ -4,18 +4,18 @@ import (
 	m "echo/controller"
 	_ "fmt"
 	_ "log"
-	"net/http"
 
 	"github.com/labstack/echo"
+	_ "github.com/swaggo/echo-swagger"
 )
+
+// @title Customers API
+// @version 1.0
+// @description.markdown
 
 func main() {
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello from /")
-
-	})
-
+	e.GET("/", m.HeatCheck)
 	e.GET("/getAllData", m.GetAllData)
 	e.GET("/getData/:id", m.GetData)
 	e.POST("/createData", m.CreateData)
