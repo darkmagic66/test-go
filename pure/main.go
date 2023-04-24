@@ -28,6 +28,7 @@ func moviesHandler(w http.ResponseWriter, req *http.Request) {
 		}
 		fmt.Println(string(body))
 		obj := test{}
+		// json -> obj
 		err = json.Unmarshal(body, &obj)
 		if err != nil {
 			w.WriteHeader(http.StatusBadRequest)
